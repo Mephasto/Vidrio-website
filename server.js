@@ -67,6 +67,16 @@ server.get('/', function(req,res){
             }
   });
 });
+server.get('/albums', function(req,res){
+  res.render('albums.jade', {
+    locals : { 
+              title : 'VIDRIO - Albums'
+             ,description: 'VIDRIO'
+             ,author: 'Mephasto'
+             ,analyticssiteid: 'XXXXXXX' 
+            }
+  });
+});
 
 
 //A Route for Creating a 500 Error (Useful to keep around)

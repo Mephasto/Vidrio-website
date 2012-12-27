@@ -4,6 +4,9 @@ font-family: 'Ubuntu', sans-serif;
 font-family: 'Bowlby One SC', cursive;
 font-family: 'Nunito', sans-serif;
 */
+body {
+    background: url('../images/white-noisy-texture.png');
+}
 a {
     color: #555;
     text-decoration: none;
@@ -12,6 +15,8 @@ a {
 a:hover {
     color: #000;
 }
+
+/* Header */
 h1 {
     margin: 0;
     font-size: 100px;
@@ -34,11 +39,37 @@ h2 {
     width: 1024px;
     margin: auto;
 }
+article {
+    margin-top: 25px;
+    width: 800px;
+    float: left;
+}
+/* Header */
 header {
+    height: 220px;
     font-family: 'Bowlby One SC', cursive;
     font-size: 68px;
     color: black;
 }
+#album {
+    width: 360px;
+    margin-right: 20px;
+    float: left;
+}
+#album .info {
+    margin-top: 20px;
+    font-family: 'Overlock', cursive;
+}
+#album .info p span {
+    display: block;
+    margin-left: 10px;
+}
+#bc-player {
+    float: left;
+}
+
+
+/* Navigations */
 #nav ul {
     margin: 25px 0px 0px 0px;
     padding: 0;
@@ -55,10 +86,32 @@ header {
 #nav ul li a {
     padding: 5px;
 }
+#verticalNav {
+    width: 180px;
+    min-height: 450px;
+    float: left;
+}
+#verticalNav ul {
+    margin: 25px 0px 0px 0px;
+    padding: 0;
+}
+#verticalNav ul li {
+    list-style: none;
+    float: left;
+    margin-right: 30px;
+    font-family: 'Ubuntu', sans-serif;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+}
+#verticalNav ul li a {
+    padding: 5px;
+}
 
+
+/* Footer */
 footer {
-    position: absolute;
-    bottom: 0px;
+    float: left;
     height: 178px;
     width: 1024px;
     margin-top: 30px;
