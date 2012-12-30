@@ -19,4 +19,8 @@ $(document).ready(function() {
         $('h2').css('color', '#'+Math.floor(Math.random()*16777215).toString(16));
     }
 
+    $('#datepicker').datepicker();
+    $('#timepicker').timepicker();
+    console.log($('#datepicker'));
+
 });

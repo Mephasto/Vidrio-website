@@ -2,6 +2,7 @@
 var connect = require('connect')
     , express = require('express')
     , io = require('socket.io')
+    , mongoose = require('mongoose')
     , port = (process.env.PORT || 8081);
 
 //Setup Express
@@ -15,6 +16,10 @@ server.configure(function(){
     server.use(connect.static(__dirname + '/static'));
     server.use(server.router);
 });
+
+//DB connection
+mongoose.connect('mongodb://localhost/test');
+var models = require('./models');
 
 //setup the errors
 server.error(function(err, req, res, next){
@@ -35,7 +40,7 @@ server.error(function(err, req, res, next){
                 },status: 500 });
     }
 });
-server.listen( port);
+server.listen(port);
 
 //Setup Socket.IO
 var io = io.listen(server);
@@ -56,6 +61,31 @@ io.sockets.on('connection', function(socket){
 ///////////////////////////////////////////
 
 /////// ADD ALL YOUR ROUTES HERE  /////////
+
+server.get('/shows/new', function(req,res){
+  res.render('newShow.jade', {
+    locals : { 
+              title : 'VIDRIO - Nueva fecha! :)'
+             ,description: 'VIDRIO'
+             ,author: 'Mephasto'
+             ,analyticssiteid: 'XXXXXXX' 
+            }
+  });
+});
+
+server.post('/shows/new', function(req,res){
+  var show = new models.Show(req.body);
+  show.save(function(err){
+    console.dir(err)
+  });
+
+});
+
+server.get('/shows', function(req,res){
+  models.Show.find({}, function (err, docs) {
+    res.send(docs);
+  });
+});
 
 server.get('/', function(req,res){
   res.render('index.jade', {
@@ -78,6 +108,11 @@ server.get('/albums', function(req,res){
   });
 });
 
+/// REST APIS ///
+// server.get('/fans/:id', fans.findById);
+// server.post('/fans', fans.addFan);
+// server.put('/fans/:id', fans.updateFan);
+// server.delete('/fans/:id', fans.deleteFan);
 
 //A Route for Creating a 500 Error (Useful to keep around)
 server.get('/500', function(req, res){

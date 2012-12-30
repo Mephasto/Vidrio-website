@@ -1,0 +1,15 @@
+label {
+	font-family: sans-serif;
+	display: block;
+	color: #333;
+	font-size: 12px;
+	font-weight: bold;
+}
+input, textarea {
+	width: 400px;
+	padding: 5px;
+	
+}
+textarea {
+	min-height: 200px;
+}

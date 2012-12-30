@@ -17,12 +17,14 @@ html.no-js(lang='en')
     meta(name="viewport", content='width=device-width, initial-scale=1')
     link(rel='stylesheet', href='/css/style.css')
     link(rel='stylesheet', href='/css/layout.css')
+    link(rel='stylesheet', href='/css/admin-layout.css')
+    link(rel='stylesheet', href='/css/jquery.ui.timepicker.css')
+    link(rel='stylesheet', href='/libs/jqueryui/css/ui-lightness/jquery-ui-1.9.2.custom.min.css')
     link(rel='shortcut icon', href='http://example.com/myicon.ico')
-    link(href='http://fonts.googleapis.com/css?family=Overlock|Ubuntu:700|Bowlby+One+SC|Nunito', rel='stylesheet', type='text/css')
-    //-script(src='js/libs/modernizr-2.0.6.min.js')
+    link(href='http://fonts.googleapis.com/css?family=Ubuntu:700', rel='stylesheet', type='text/css')
+
   body
     div(id='container')
-      include includes/header
 
       block content
 

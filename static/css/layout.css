@@ -81,7 +81,6 @@ header {
     font-family: 'Ubuntu', sans-serif;
     text-transform: uppercase;
     font-size: 12px;
-    font-weight: bold;
 }
 #nav ul li a {
     padding: 5px;
@@ -102,7 +101,11 @@ header {
     font-family: 'Ubuntu', sans-serif;
     text-transform: uppercase;
     font-size: 12px;
-    font-weight: bold;
+    padding: 0px 0px 15px 0px;
+}
+#verticalNav .active a {
+    background: #333;
+    color: #fff;
 }
 #verticalNav ul li a {
     padding: 5px;
