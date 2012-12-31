@@ -5,12 +5,27 @@ header
     div(id='nav')
         ul
             li
-                a(href='/')=('Home')
+                if activeNav== 'home'
+                    a(href='/',class='active')=('Home')
+                else
+                    a(href='/')=('Home')
             li
-                a(href='/albums')=('Albums')
+                if activeNav=='albums'
+                    a(href='/albums',class='active')=('Albums')
+                else
+                    a(href='/albums')=('Albums')
             li
-                a(href='/shows')=('Shows')
+                if activeNav=='shows'
+                    a(href='/shows',class='active')=('Shows')
+                else
+                    a(href='/shows')=('Shows')
             li
-                a(href='/videos')=('Videos')
+                if activeNav=='videos'
+                    a(href='/videos',class='active')=('Videos')
+                else
+                    a(href='/videos')=('Videos')
             li
-                a(href='/photos')=('Fotos')
+                if activeNav=='photos'
+                    a(href='/photos',class='active')=('Fotos')
+                else
+                    a(href='/photos')=('Fotos')

@@ -1,0 +1,19 @@
+extends layout
+
+block content
+    div(id='verticalNav')
+        ul
+            each show in shows
+                li
+                    a(href='#'+show._id)=(show.title)
+    article
+        each show in shows
+            - var imgSrc = '../images/shows/' + show._id + '.png'
+            div(class='show',id=show._id)
+                h4=show.title
+                img(src=imgSrc)
+                p(style='white-space:pre;')=show.body
+                p=show.place
+                p=show.date
+                p=show.hour
+        

@@ -62,45 +62,76 @@ io.sockets.on('connection', function(socket){
 
 /////// ADD ALL YOUR ROUTES HERE  /////////
 
+// SHOWS - ABM
 server.get('/shows/new', function(req,res){
   res.render('newShow.jade', {
-    locals : { 
-              title : 'VIDRIO - Nueva fecha! :)'
-             ,description: 'VIDRIO'
-             ,author: 'Mephasto'
-             ,analyticssiteid: 'XXXXXXX' 
-            }
-  });
-});
-
-server.post('/shows/new', function(req,res){
-  var show = new models.Show(req.body);
-  show.save(function(err){
-    console.dir(err)
-  });
-
-});
-
-server.get('/shows', function(req,res){
-  models.Show.find({}, function (err, docs) {
-    res.send(docs);
-  });
-});
-
-server.get('/', function(req,res){
-  res.render('index.jade', {
     locals : { 
               title : 'VIDRIO Trip Instrumental'
              ,description: 'VIDRIO'
              ,author: 'Mephasto'
              ,analyticssiteid: 'XXXXXXX' 
+             ,message : ''}
+  });
+});
+server.post('/shows/new', function(req,res){
+  var show = new models.Show(req.body);
+  show.save(function(err){
+    console.dir(err)
+    if(err === null){
+      res.render('newShow.jade', {
+        locals : { 
+                  title : 'VIDRIO Trip Instrumental'
+                 ,description: 'VIDRIO'
+                 ,author: 'Mephasto'
+                 ,analyticssiteid: 'XXXXXXX'
+                 ,message : 'Nueva fecha creada!'}
+      });
+    }
+  });
+});
+server.get('/shows/list', function(req,res){
+  models.Show.find({}, function (err, shows) {
+    res.send(shows);
+  });
+});
+
+// SHOWS
+server.get('/shows', function(req,res){
+  models.Show.find({}, function (err, shows) {
+    console.log(shows)
+    if(err === null){
+      res.render('shows.jade', {
+        locals : { 
+                  title : 'VIDRIO - Shows'
+                 ,activeNav : 'shows'
+                 ,description: 'VIDRIO'
+                 ,author: 'Mephasto'
+                 ,analyticssiteid: 'XXXXXXX'
+                 ,shows : shows}
+      });
+    }
+  });
+});
+
+// HOME
+server.get('/', function(req,res){
+  res.render('index.jade', {
+    locals : { 
+              title : 'VIDRIO Trip Instrumental'
+             ,activeNav : 'home'
+             ,description: 'VIDRIO'
+             ,author: 'Mephasto'
+             ,analyticssiteid: 'XXXXXXX' 
             }
   });
 });
+
+//ALBUMS
 server.get('/albums', function(req,res){
   res.render('albums.jade', {
     locals : { 
               title : 'VIDRIO - Albums'
+             ,activeNav : 'albums'
              ,description: 'VIDRIO'
              ,author: 'Mephasto'
              ,analyticssiteid: 'XXXXXXX' 

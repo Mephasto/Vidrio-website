@@ -21,6 +21,5 @@ $(document).ready(function() {
 
     $('#datepicker').datepicker();
     $('#timepicker').timepicker();
-    console.log($('#datepicker'));
 
 });
