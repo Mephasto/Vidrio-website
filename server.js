@@ -98,7 +98,6 @@ server.get('/shows/list', function(req,res){
 // SHOWS
 server.get('/shows', function(req,res){
   models.Show.find({}, function (err, shows) {
-    console.log(shows)
     if(err === null){
       res.render('shows.jade', {
         locals : { 
@@ -107,7 +106,8 @@ server.get('/shows', function(req,res){
                  ,description: 'VIDRIO'
                  ,author: 'Mephasto'
                  ,analyticssiteid: 'XXXXXXX'
-                 ,shows : shows}
+                 ,shows : shows
+               }
       });
     }
   });

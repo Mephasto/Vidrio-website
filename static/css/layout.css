@@ -7,6 +7,9 @@ font-family: 'Nunito', sans-serif;
 body {
     background: url('../images/white-noisy-texture.png');
 }
+a, p {
+    white-space:pre-line;
+}
 a {
     color: #555;
     text-decoration: none;
@@ -68,7 +71,6 @@ header {
     float: left;
 }
 
-
 /* Navigations */
 #nav ul {
     margin: 25px 0px 0px 0px;
@@ -114,6 +116,47 @@ header {
     padding: 5px;
 }
 
+/* Shows */
+.show {
+    width: 530px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 3px solid rgba(0,0,0,0.2);
+}
+.show h5,
+.show h4 {
+    font-family: 'Ubuntu';
+    text-transform: uppercase;
+    font-size: 22px;
+    color: #333;
+    margin: 0px 0px 10px 0px;
+}
+.show h5 {
+    float: right;
+    position: relative;
+    top: -40px;
+    right: 14px;
+    color: #fb2908;
+}
+.show .place {
+    position: relative;
+    top: -10px;
+    color: #69ab38;
+    font-size: 15px;
+    font-weight: bold;
+}
+.show p {
+    display: block;
+    font-family: sans-serif;
+    font-size: 0.8em;
+    color: #333;
+    margin: 0px;
+    padding: 0px;
+}
+.show .body {
+    width: 515px;
+    margin-bottom: 20px;
+} 
 
 /* Footer */
 footer {

@@ -6,7 +6,7 @@ var Schema = mongoose.Schema
 var showSchema = new Schema({
     title    : String
   , place    : String
-  , date     : { type: Date, default : Date.now}
+  , date     : String
   , time	 : String
   , body     : String
 });
