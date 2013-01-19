@@ -139,6 +139,19 @@ server.get('/albums', function(req,res){
   });
 });
 
+//PHOTOS
+server.get('/photos', function(req,res){
+  res.render('photos.jade', {
+    locals : {
+              title : 'VIDRIO - Fotos'
+             ,activeNav : 'fotos'
+             ,description: 'VIDRIO'
+             ,author: 'Mephasto'
+             ,analyticssiteid: 'XXXXXXX'
+            }
+  });
+});
+
 /// REST APIS ///
 // server.get('/fans/:id', fans.findById);
 // server.post('/fans', fans.addFan);
