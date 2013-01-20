@@ -5,18 +5,18 @@ $(document).ready(function(){
         + "&kind="      +   "album"
         + "&hl="        +   "en_US"
         + "&fields="    +   "entry(media:group,id)"
-        + "&thumbsize=" +   104;
+        + "&thumbsize=" +   50;
  
     $.getJSON(json_Album_URI, function(data){
         console.log(data)
         $.each(data.feed.entry, function(i,item){
             //Thumbnail URL
+            var album_Title = item.media$group.media$title.$t;
             $.each(item.media$group.media$thumbnail, function(i,item){
                 var album_thumb_URL = item.url;
-                $('#images').append('<img src="' + album_thumb_URL + '"/>');
+                $('#photoalbums').append('<li>' + album_Title + '</li>');
             });
             //Album Title
-            var album_Title = item.media$group.media$title.$t;
             //$('#images').append("Album Title: " + album_Title + '<br />');
             //Album Description
             var album_Description = item.media$group.media$description.$t;
@@ -42,17 +42,19 @@ $(document).ready(function(){
                 url: json_Photo_URI,
                 success : function(data){
                     $.each(data.feed.entry, function(i,item){
-                        //$('#images').append("Album Photos: <br />");
                         //Photo URL
+                        var photo_URL = [];
                         $.each(item.media$group.media$content, function(i,item){
-                            var photo_URL = item.url;
                             // FOTO GRANDE ACA <--
-                            //$('#images').append('<img src="' + photo_URL + '" /><br />');
+                            if ( ! photo_URL[i]) {
+                                photo_URL[i] = [];  
+                            }
+                            photo_URL[i]['big'] = item.url;
                         });
                         //Thumbnail URL
                         $.each(item.media$group.media$thumbnail, function(i,item){
-                            var photo_Thumb_URL = item.url;
-                            $('#images').append('<img src="' + photo_Thumb_URL + '" />');
+                            photo_URL[i]['small'] = item.url;
+                            $('#images').append('<a href="' + photo_URL[i]['big'] + '" title="Fotos" data-gallery="gallery"><img src="' + photo_URL[i]['small'] + '" /></a >');
                         });
                         //Photo Title
                         var photo_Title = item.media$group.media$title.$t;
@@ -64,7 +66,6 @@ $(document).ready(function(){
                 },
                 dataType: 'json',
                 async: false
-                
             });       
         
         });

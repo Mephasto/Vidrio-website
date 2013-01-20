@@ -20,13 +20,13 @@ a:hover {
 }
 
 /* Header */
-h1 {
+header h1 {
     margin: 0;
     font-size: 100px;
     line-height: 160px;
     font-weight: normal;
 }
-h2 {
+header h2 {
     display: block;
     width: 390px;
     font-size: 24px;
@@ -120,9 +120,11 @@ header {
 /* Shows */
 .show {
     width: 530px;
-    padding-bottom: 20px;
+    padding: 20px;
     margin-bottom: 20px;
     border-bottom: 3px solid rgba(0,0,0,0.2);
+    background: #fff;
+    box-shadow: 0px 1px 3px rgba(0,0,0,0.2);
 }
 .show h5,
 .show h4 {
@@ -155,9 +157,49 @@ header {
     padding: 0px;
 }
 .show .body {
-    width: 515px;
+    width: 100%;
     margin-bottom: 20px;
-} 
+}
+.show img {
+    display: block;
+    margin: auto;
+}
+.modal {
+    background: #090909 !important;
+    padding-bottom: 10px;
+}
+.modal .modal-title {
+    color: #ccc;
+}
+.modal a.close,
+.modal a.close:hover {
+    color: #ccc !important;
+    opacity: 1;
+    text-shadow: 0px 0px 0px;
+    font-size: 12px;
+}
+.modal .modal-header {
+    border-bottom: 1px solid #333333;
+}
+.modal .modal-footer {
+    display: none;
+    background: #090909 !important;
+    border-top: 1px solid #333333;
+    -webkit-box-shadow: inset 0 0 0 #ffffff;
+    -moz-box-shadow: inset 0 0 0 #ffffff;
+    box-shadow: inset 0 0 0 #ffffff;
+}
+
+/* Fotos */
+#gallery {
+    background: black;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+#gallery img {
+    margin: 0px 10px 10px 0px;
+}
+
 
 /* Footer */
 footer {

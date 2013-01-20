@@ -1,7 +1,7 @@
 header
     div(class='colors')
     h1=('VIDRIO')
-    h2=('trip instrumental')
+    h2=(activeNav)
     div(id='nav')
         ul
             li
@@ -25,7 +25,7 @@ header
                 else
                     a(href='/videos')=('Videos')
             li
-                if activeNav=='photos'
+                if activeNav=='fotos'
                     a(href='/photos',class='active')=('Fotos')
                 else
                     a(href='/photos')=('Fotos')
