@@ -18,7 +18,7 @@ server.configure(function(){
 });
 
 //DB connection
-mongoose.connect('mongodb://localhost/test');
+mongoose.connect('mongodb://localhost/vidrio');
 var models = require('./models');
 
 //setup the errors
@@ -89,6 +89,22 @@ server.post('/shows/new', function(req,res){
     }
   });
 });
+server.del('/shows/delete', function(req,res){
+  var show = new models.Show(req.body);
+  show.save(function(err){
+    console.dir(err)
+    if(err === null){
+      res.render('newShow.jade', {
+        locals : { 
+                  title : 'VIDRIO Trip Instrumental'
+                 ,description: 'VIDRIO'
+                 ,author: 'Mephasto'
+                 ,analyticssiteid: 'XXXXXXX'
+                 ,message : 'Fecha borrada!'}
+      });
+    }
+  });
+});
 server.get('/shows/list', function(req,res){
   models.Show.find({}, function (err, shows) {
     res.send(shows);
@@ -97,7 +113,8 @@ server.get('/shows/list', function(req,res){
 
 // SHOWS
 server.get('/shows', function(req,res){
-  models.Show.find({}, function (err, shows) {
+  var query = models.Show.find();
+  query.sort('date', -1).execFind(function (err, shows) {
     if(err === null){
       res.render('shows.jade', {
         locals : { 
@@ -107,7 +124,7 @@ server.get('/shows', function(req,res){
                  ,author: 'Mephasto'
                  ,analyticssiteid: 'XXXXXXX'
                  ,shows : shows
-               }
+              }
       });
     }
   });
@@ -115,10 +132,28 @@ server.get('/shows', function(req,res){
 
 // HOME
 server.get('/', function(req,res){
-  res.render('index.jade', {
+  models.Show.find({$query: {}, $orderby: { date : 1 } }, function (err, shows) {
+    if(err === null){
+      res.render('index.jade', {
+        locals : { 
+                  title : 'VIDRIO Trip Instrumental'
+                 ,activeNav : 'home'
+                 ,description: 'VIDRIO'
+                 ,author: 'Mephasto'
+                 ,analyticssiteid: 'XXXXXXX'
+                 ,shows : shows
+                }
+      });
+    }
+  });
+});
+
+// VIDEOS
+server.get('/videos', function(req,res){
+  res.render('videos.jade', {
     locals : { 
               title : 'VIDRIO Trip Instrumental'
-             ,activeNav : 'home'
+             ,activeNav : 'videos'
              ,description: 'VIDRIO'
              ,author: 'Mephasto'
              ,analyticssiteid: 'XXXXXXX' 
@@ -145,6 +180,19 @@ server.get('/photos', function(req,res){
     locals : {
               title : 'VIDRIO - Fotos'
              ,activeNav : 'fotos'
+             ,description: 'VIDRIO'
+             ,author: 'Mephasto'
+             ,analyticssiteid: 'XXXXXXX'
+            }
+  });
+});
+
+//BIO
+server.get('/bio', function(req,res){
+  res.render('bio.jade', {
+    locals : {
+              title : 'VIDRIO - Bio'
+             ,activeNav : 'bio'
              ,description: 'VIDRIO'
              ,author: 'Mephasto'
              ,analyticssiteid: 'XXXXXXX'

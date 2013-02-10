@@ -5,23 +5,37 @@ block content
         ul
             each show in shows
                 li
+                    - var today = new Date();
+                    - var showDate = new Date(show.date);
+                    - if (showDate > today) {
+                    -   if (!next) {
+                    span=('Próximos shows:')
+                    -       var next = true;
+                    -   }
+                    - }else{
+                    -   if (!hist) {
+                    span=('Historial:')
+                    -       var hist = true;
+                    -   }
+                    - }
                     a(href='#'+show._id)=(show.title)
     article
         each show in shows
+            - var today = new Date();
             - var imgSrc = '/images/shows/' + show._id + '.png';
             - var showDate = new Date(show.date);
-            - if(showDate > Date()) {
-            -   var done = 'new';
+            - if (showDate > today) {
+            -   var status = 'new';
             - }else{
-            -    var done ='old';
+            -    var status ='old';
             - }
             
-            div(class='show',id=show._id)
+            div(class='show ' + status ,id=show._id)
                 h4=show.title
                 h5=show.time
+                h3=show.date
                 div(class='body')
                     p(class='place')=show.place
                     p=show.body
-                    p=done
                 img(src=imgSrc)
         

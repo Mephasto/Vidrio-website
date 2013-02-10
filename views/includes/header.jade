@@ -1,31 +1,40 @@
 header
-    div(class='colors')
-    h1=('VIDRIO')
-    h2=(activeNav)
-    div(id='nav')
-        ul
-            li
-                if activeNav== 'home'
-                    a(href='/',class='active')=('Home')
-                else
-                    a(href='/')=('Home')
-            li
-                if activeNav=='albums'
-                    a(href='/albums',class='active')=('Albums')
-                else
-                    a(href='/albums')=('Albums')
-            li
-                if activeNav=='shows'
-                    a(href='/shows',class='active')=('Shows')
-                else
-                    a(href='/shows')=('Shows')
-            li
-                if activeNav=='videos'
-                    a(href='/videos',class='active')=('Videos')
-                else
-                    a(href='/videos')=('Videos')
-            li
-                if activeNav=='fotos'
-                    a(href='/photos',class='active')=('Fotos')
-                else
-                    a(href='/photos')=('Fotos')
+    div(id='titles')
+        h1=('VIDRIO')
+        h2=(activeNav)
+        div(id='nav')
+            ul
+                li
+                    if activeNav== 'home'
+                        a(href='/',class='active')=('Home')
+                    else
+                        a(href='/')=('Home')
+                li
+                    if activeNav=='albums'
+                        a(href='/albums',class='active')=('Albums')
+                    else
+                        a(href='/albums')=('Albums')
+                li
+                    if activeNav=='shows'
+                        a(href='/shows',class='active')=('Shows')
+                    else
+                        a(href='/shows')=('Shows')
+                li
+                    if activeNav=='videos'
+                        a(href='/videos',class='active')=('Videos')
+                    else
+                        a(href='/videos')=('Videos')
+                li
+                    if activeNav=='fotos'
+                        a(href='/photos',class='active')=('Fotos')
+                    else
+                        a(href='/photos')=('Fotos')
+                li
+                    if activeNav=='bio'
+                        a(href='/bio',class='active')=('Bio')
+                    else
+                        a(href='/bio')=('Bio')
+    div(id='mailListInput')
+        label(for='mailListInput')=('Te avisamos cuando toca VIDRIO:')
+        input(id='mailListInput',name='mailListInput',type='text',value='dejanos tu email')
+        input(value='Enviar mail',type='submit')

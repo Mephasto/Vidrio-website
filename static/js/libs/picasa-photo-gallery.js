@@ -8,7 +8,6 @@ $(document).ready(function(){
         + "&thumbsize=" +   50;
  
     $.getJSON(json_Album_URI, function(data){
-        console.log(data)
         $.each(data.feed.entry, function(i,item){
             //Thumbnail URL
             var album_Title = item.media$group.media$title.$t;
