@@ -20,7 +20,9 @@ server.locals = {
                   title : 'VIDRIO Trip Instrumental'
                   ,description: ''
                   ,author: ''
-                  ,analyticssiteid: 'XXXXXXX' 
+                  ,analyticssiteid: 'XXXXXXX'
+                  ,blog: false
+
                 }
 
 ///////////////////////////////////////////
