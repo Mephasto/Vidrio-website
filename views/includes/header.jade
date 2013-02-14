@@ -34,7 +34,8 @@ header
                         a(href='/bio',class='active')=('Bio')
                     else
                         a(href='/bio')=('Bio')
-    div(id='mailListInput')
-        label(for='mailListInput')=('Te avisamos cuando toca VIDRIO:')
-        input(id='mailListInput',name='mailListInput',type='text',value='dejanos tu email')
-        input(value='Enviar mail',type='submit')
+    div(id='mailListBox')
+        form()
+            label(for='mailListInput')=('Te avisamos cuando toca VIDRIO:')
+            input(id='mailListInput',name='mailListInput',type='text',value='dejanos tu email')
+            input(value='Enviar mail',type='submit')

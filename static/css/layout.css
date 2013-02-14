@@ -18,7 +18,10 @@ a {
 a:hover {
     color: #fefefa;
 }
-
+form {
+    margin: 0px;
+    padding: 0px;
+}
 /* Header */
 header h1 {
     margin: 0;
@@ -26,8 +29,8 @@ header h1 {
     font-size: 120px;
     line-height: 160px;
     font-weight: normal;
-    opacity: 0.5;
-    text-shadow: 0px 10px 60px rgba(50,50,20,1);
+    opacity: 0.8;
+    text-shadow: 0px 0px 25px rgba(200,255,255,0.9);
 }
 header h2 {
     display: block;
@@ -43,6 +46,7 @@ header h2 {
     opacity: 0.5;
     border-radius: 5px;
     box-shadow: 0px 10px 30px rgba(0,0,0,1);
+    background: url('../images/dark-noisy-texture_y.png');
 }
 header h1, header h2 {
     transition: background-color 1s, color 1s;
@@ -60,7 +64,6 @@ header h1, header h2 {
 }
 article {
     margin-top: 25px;
-    width: 800px;
     float: left;
 }
 
@@ -99,13 +102,15 @@ header {
     float: left;
     width: 600px;
 }
-#mailListInput {
-    float: left;
-    width: 350px;
-    height: 90px;
-    margin-top: 115px;
+#mailListBox {
+    float: right;
+    width: 300px;
+    height: 60px;
+    margin-top: 105px;
 }
-#mailListInput label {
+#mailListBox label {
+    display: block;
+    float: left;
     color: #eee;
     margin: 0px 0px 10px 0px;
     padding: 4px 10px;
@@ -116,7 +121,7 @@ header {
     opacity: 0.6;
     background: #000;
 }
-#mailListInput input[type='text'] {
+#mailListBox input[type='text'] {
     float: left;
     height: 30px;
     width: 150px;
@@ -127,10 +132,10 @@ header {
     border: none;
     opacity: 0.4;
 }
-#mailListInput input[type='text']:focus {
+#mailListBox input[type='text']:focus {
     opacity: 1;
 }
-#mailListInput input[type='submit'] {
+#mailListBox input[type='submit'] {
     float: left;
     background: #6c6c6c;
     box-shadow: 0px 2px 4px rgba(0,0,0,1);
@@ -143,7 +148,7 @@ header {
     opacity: 0.4;
     border-radius: 4px;
 }
-#mailListInput input[type='submit']:hover {
+#mailListBox input[type='submit']:hover {
     opacity: 1;
 }
 
@@ -297,6 +302,7 @@ header {
 /* Fotos */
 #gallery {
     background: black;
+    width: 912px;
     padding-left: 10px;
     padding-top: 10px;
 }
@@ -336,10 +342,9 @@ footer {
     float: left;
     height: 40px;
     width: 1024px;
-    margin-top: 30px;
-    background: #361f28;
-    opacity: 0.7;
-    border-radius: 20px;
+    margin: 30px 0px 10px 0px;
+    background: rgba(134,59,88,0.2);
+    border-radius: 20px; 
 }
 footer p {
     margin-left: 20px;

@@ -17,15 +17,27 @@ $(document).ready(function() {
     function mycode() {
         $('header h2').css('background-color', '#'+Math.floor(Math.random()*16777215).toString(16));
         $('header h2').css('color', '#'+Math.floor(Math.random()*16777215).toString(16));
-        $('header h1').css('color', '#'+Math.floor(Math.random()*16777215).toString(16));
+        //$('header h1').css('color', '#'+Math.floor(Math.random()*16777215).toString(16));
     }
 
-    //var bgAnim = setInterval(mycodeB, 100);
+    var bgAnim = setInterval(mycodeB, 150);
     function mycodeB() {
-        $('body').css('background-position', Math.floor(Math.random()*255) + 'px ' + Math.floor(Math.random()*255) + 'px' );
+        $('header h2').css('background-position', Math.floor(Math.random()*255) + 'px ' + Math.floor(Math.random()*255) + 'px' );
     }
 
     $('#datepicker').datepicker();
     $('#timepicker').timepicker();
+
+    var mailListInput = $('#mailListInput').attr('value');
+    $('#mailListInput').focusin(function(){
+        if($(this).attr('value') == mailListInput){
+            $(this).attr('value','');
+        }
+    });
+    $('#mailListInput').focusout(function(){
+        if($(this).attr('value') == ''){
+            $(this).attr('value',mailListInput);
+        }
+    });
 
 });
