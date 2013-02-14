@@ -4,13 +4,15 @@
 $(document).ready(function() {
     'use strict';
 
-    var mailListInput, animate, changeColor, elem;
+    var mailListInput, animate, changeColor, elem, fps = 60;
 
     elem = $('header h2');
 
     animate = function () {
         elem.css('background-position', Math.floor(Math.random()*255) + 'px ' + Math.floor(Math.random()*255) + 'px' );
-        requestAnimationFrame(animate, elem);
+        setTimeout(function() {
+            requestAnimationFrame(animate, elem);
+        }, 1000 / fps);
     };
     changeColor = function () {
         elem.css('background-color', '#'+Math.floor(Math.random()*16777215).toString(16));
