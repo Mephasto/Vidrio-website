@@ -77,7 +77,8 @@ server.get('/', function(req,res){
       res.render('index.jade', {
                   title : 'VIDRIO Trip Instrumental',
                   activeNav : 'home',
-                  shows : shows
+                  shows : shows,
+                  blog : true
                 }
       );
     }
