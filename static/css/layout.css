@@ -335,6 +335,13 @@ header {
     opacity: 0.8;
     letter-spacing: 2px;
 }
+.bio .info {
+    display: block;
+    margin-top: 20px;
+    font-size: 13px;
+    font-family: 'Open Sans', sans-serif;
+    color: #fcfcf9;
+}
 
 
 /* Footer */
