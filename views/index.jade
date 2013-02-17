@@ -6,7 +6,7 @@ block content
             - var imgSrc = '/images/shows/' + show._id + '.png';
             - var showDate = new Date(show.date);
             - var today = new Date();
-            - if (showDate <> today) {
+            - if (showDate => today) {
             div(class='show new' ,id=show._id)
                 h4=show.title
                 h5=show.time
