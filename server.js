@@ -22,7 +22,7 @@ server.locals = {
                   ,author: ''
                   ,analyticssiteid: 'XXXXXXX'
                   ,blog: false
-
+                  ,gallery: false
                 }
 
 ///////////////////////////////////////////
@@ -60,7 +60,7 @@ server.get('/shows/list', function(req,res){
 // SHOWS
 server.get('/shows', function(req,res){
   var query = models.Show.find();
-  query.sort('-date').execFind(function (err, shows) {
+  query.sort('date').execFind(function (err, shows) {
     if(err === null){
       res.render('shows.jade', { 
                   title : 'VIDRIO - Shows',
@@ -109,7 +109,8 @@ server.get('/albums', function(req,res){
 server.get('/photos', function(req,res){
   res.render('photos.jade', {
               title : 'VIDRIO - Fotos',
-              activeNav : 'fotos'
+              activeNav : 'fotos',
+              gallery: true
             }
   );
 });

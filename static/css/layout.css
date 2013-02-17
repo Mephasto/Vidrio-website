@@ -2,7 +2,6 @@
 font-family: 'Overlock', cursive;
 font-family: 'Ubuntu', sans-serif;
 font-family: 'Bowlby One SC', cursive;
-font-family: 'Nunito', sans-serif;
 */
 body {
     background: url('../images/dark-noisy-texture_x.png') #000;
@@ -74,6 +73,42 @@ header {
     font-size: 68px;
     color: black;
 }
+#homeShows {
+    width: 39%;
+    float: right;
+}
+#homeShows .show {
+    width: 100%;
+}
+#homePosts {
+    width: 59%;
+    color: #fcfcf9;
+}
+#homePosts h4 {
+    font-size: 29px;
+    text-transform: uppercase;
+    font-family: 'Overlock', cursive;
+    font-weight: normal;
+    color: #f3faf5;
+    margin: 0px 0px 10px 0px;
+    text-shadow: 0px 1px 4px rgb(0,0,0);
+}
+#homePosts .post {
+    background: rgba(14,13,17,0.5);
+    padding: 20px 2% 20px 4%;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.9);
+    border-radius: 10px;
+}
+#homePosts div {
+    display: block;
+    font-size: 12px;
+}
+#homePosts img {
+    float: left;
+    margin: 0px 10px 10px 0px;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.9);
+}
+
 #album {
     width: 360px;
     margin-right: 20px;
@@ -219,11 +254,17 @@ header {
     margin: 0px 0px 10px 0px;
 }
 .show h5 {
-    float: right;
-    position: relative;
-    top: -40px;
+    float: right
     right: 14px;
     color: #fb2908;
+    font-size: 28px;
+    margin: 0px;
+}
+.show h3 {
+    float: right;
+    clear: both;
+    color: #fb2908;
+    font-size: 28px;
 }
 .show .place {
     position: relative;
@@ -359,4 +400,9 @@ footer p {
     line-height: 40px;
     font-spacing: 12px;
     color: #fff;
+    float: left;
+}
+footer iframe {
+    margin: 7px 10px 0px 10px;
+    float: right;
 }

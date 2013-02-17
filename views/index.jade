@@ -1,12 +1,12 @@
 extends layout
 
 block content
-    article
+    article(id='homeShows')
         each show in shows
-            - var imgSrc = '/images/shows/' + show._id + '.jpg';
+            - var imgSrc = '/images/shows/' + show._id + '.png';
             - var showDate = new Date(show.date);
             - var today = new Date();
-            - if (showDate > today) {
+            - if (showDate <> today) {
             div(class='show new' ,id=show._id)
                 h4=show.title
                 h5=show.time
@@ -15,5 +15,6 @@ block content
                     p=show.body
                 img(src=imgSrc)
             - }
-        div(class='fb-like-box',data-href='http://www.facebook.com/vidrio.rockpsicodelico/', data-width='292', data-show-faces='true', data-colorscheme='dark', data-stream='true', data-border-color='000000', data-header='true')
-        ul
+    article(id='homePosts')
+
+
