@@ -34,6 +34,9 @@ header
                         a(href='/bio',class='active')=('Bio')
                     else
                         a(href='/bio')=('Bio')
+    audio(controls)
+        source(src="satan.mp3", type="audio/mpeg")
+        Your browser does not support the audio element.
     div(id='mailListBox')
         form()
             label(for='mailListInput')=('Te avisamos cuando toca VIDRIO:')

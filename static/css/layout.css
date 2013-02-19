@@ -29,7 +29,8 @@ header h1 {
     line-height: 160px;
     font-weight: normal;
     opacity: 0.8;
-    text-shadow: 0px 0px 25px rgba(200,255,255,0.9);
+    color: #030502;
+    text-shadow: 0px 0px 25px rgba(200,222,199,0.5);
 }
 header h2 {
     display: block;
