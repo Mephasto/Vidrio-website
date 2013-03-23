@@ -23,6 +23,7 @@ server.locals = {
                   ,analyticssiteid: 'XXXXXXX'
                   ,blog: false
                   ,gallery: false
+                  ,message: null
                 }
 
 ///////////////////////////////////////////
@@ -33,7 +34,7 @@ server.locals = {
 
 // SHOWS - ABM
 server.get('/shows/new', function(req,res){
-  res.render('newShow.jade', {message : ''});
+  res.render('newShow.jade');
 });
 server.post('/shows/new', function(req,res){
   var show = new models.Show(req.body);
@@ -43,14 +44,42 @@ server.post('/shows/new', function(req,res){
     }
   });
 });
-server.del('/shows/delete', function(req,res){
-  var show = new models.Show(req.body);
-  show.save(function(err){
-    if(err === null){
-      res.render('newShow.jade', {message : 'Fecha borrada!'});
-    }
+
+server.get('/shows/delete', function(req,res){
+  res.render('delShow.jade');
+});
+server.post('/shows/delete', function(req,res){
+  return models.Show.findById(req.body.id, function (err, show) {
+    return show.remove(function (err) {
+      if (!err) {
+        // removed!
+        return res.render('delShow.jade', {message : 'Fecha borrada!'});
+        console.log("removed");
+      } else {
+        res.render('delShow.jade', {message : 'Error! - {id: ' + id + '}'});
+        // NOT removed!
+        console.log(err);
+      }
+    });
   });
 });
+
+
+/*
+server.delete('/shows/delete/:id', function (req, res){
+  return Shows.findById(req.params.id, function (err, product) {
+    return product.remove(function (err) {
+      if (!err) {
+        console.log("removed");
+        return res.send('');
+      } else {
+        console.log(err);
+      }
+    });
+  });
+});
+*/
+
 server.get('/shows/list', function(req,res){
   models.Show.find({}, function (err, shows) {
     res.send(shows);
