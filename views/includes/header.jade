@@ -34,16 +34,18 @@ header
                         a(href='/bio',class='active')=('Bio')
                     else
                         a(href='/bio')=('Bio')
-    audio(controls loop)
-        if activeNav=='home'
-            source(src="https://docs.google.com/file/d/0B4S8RwpPjHsoZEVUMHNUTFlRQTA/edit?usp=sharing", type="audio/mpeg")
-        if activeNav=='fotos'
-            source(src="https://docs.google.com/file/d/0B4S8RwpPjHsoaURMOW83YVFqek0/edit?usp=sharing", type="audio/mpeg")
-        if activeNav=='shows'
-            source(src="https://docs.google.com/file/d/0B4S8RwpPjHsoTVZ3T2l1aGllaUU/edit?usp=sharing", type="audio/mpeg")
-        if activeNav=='bio'
-            source(src="https://docs.google.com/file/d/0B4S8RwpPjHsoTVZ3T2l1aGllaUU/edit?usp=sharing", type="audio/mpeg")
-        Your browser does not support the audio element.
+
+    //- audio(controls loop)
+    //-     if activeNav=='home'
+    //-         source(src="https://docs.google.com/file/d/0B4S8RwpPjHsoZEVUMHNUTFlRQTA/edit?usp=sharing", type="audio/mpeg")
+    //-     if activeNav=='fotos'
+    //-         source(src="https://docs.google.com/file/d/0B4S8RwpPjHsoaURMOW83YVFqek0/edit?usp=sharing", type="audio/mpeg")
+    //-     if activeNav=='shows'
+    //-         source(src="https://docs.google.com/file/d/0B4S8RwpPjHsoTVZ3T2l1aGllaUU/edit?usp=sharing", type="audio/mpeg")
+    //-     if activeNav=='bio'
+    //-         source(src="https://docs.google.com/file/d/0B4S8RwpPjHsoTVZ3T2l1aGllaUU/edit?usp=sharing", type="audio/mpeg")
+    //-     Your browser does not support the audio element.
+
     div(id='mailListBox')
         form()
             label(for='mailListInput')=('Te avisamos cuando toca VIDRIO:')

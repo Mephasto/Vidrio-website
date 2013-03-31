@@ -103,6 +103,7 @@ header audio {
     padding: 20px 2% 20px 4%;
     box-shadow: 0px 5px 10px rgba(0,0,0,0.9);
     border-radius: 10px;
+    margin-bottom: 20px;
 }
 #homePosts div {
     display: block;
@@ -195,6 +196,7 @@ header audio {
 
 /* Navigations */
 #nav ul {
+    width: 400px;
     clear: both;
     float: left;
     margin: 25px 0px 0px 0px;

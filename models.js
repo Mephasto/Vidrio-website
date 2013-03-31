@@ -12,4 +12,9 @@ var showSchema = new Schema({
   , body     : String
 });
 
+var emailSchema = new Schema({
+	email 	: String
+});
+
+exports.Email = mongoose.model('Email', emailSchema);
 exports.Show = mongoose.model('Show', showSchema);
