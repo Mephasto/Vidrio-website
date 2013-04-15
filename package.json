@@ -15,6 +15,10 @@
   },
   "engine": "node >= 0.8.x",
   "subdomain": "mephasto.vidrio",
+  "domains": [
+    "estadovitreo.com.ar",
+    "www.estadovitreo.com.ar"
+  ],
   "scripts": {
     "start": "server.js"
   },
