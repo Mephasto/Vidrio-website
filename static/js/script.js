@@ -2,7 +2,6 @@
     Author: YOUR NAME HERE
 */
 $(document).ready(function() {
-    console.log('asdasd');
     'use strict';
 
     var mailListInput, animate, changeColor, elem, fps = 60;
