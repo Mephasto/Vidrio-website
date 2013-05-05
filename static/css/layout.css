@@ -143,6 +143,23 @@ header audio {
     float: left;
     width: 600px;
 }
+#bc-player .buy-something {
+    margin-left: 20px;
+}
+.buy-something {
+    display: inline-block;
+    padding: 8px 12px;
+    border-radius: 10px;
+    font-weight: bold;
+    background: #131415;
+    border: 1px solid #161718;
+}
+.buy-something:hover {
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.7);
+    color: #4285BB;
+    -webkit-box-shadow: 0px 4px 8px rgba(0,0,0,0.7);
+    -moz-box-shadow: 0px 4px 8px rgba(0,0,0,0.7);
+}
 #mailListBox {
     float: right;
     width: 300px;
