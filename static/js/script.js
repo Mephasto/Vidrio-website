@@ -1,5 +1,5 @@
 /*
-    Author: YOUR NAME HERE
+    Author: Mephasto
 */
 $(document).ready(function() {
     'use strict';
@@ -25,7 +25,7 @@ $(document).ready(function() {
 
     $('#datepicker').datepicker();
     $('#timepicker').timepicker();
-
+/*
     mailListInput = $('#mailListInput').attr('value');
     $('#mailListInput').focusin(function(){
         if($(this).attr('value') == mailListInput){
@@ -37,5 +37,5 @@ $(document).ready(function() {
             $(this).attr('value',mailListInput);
         }
     });
-
+*/
 });

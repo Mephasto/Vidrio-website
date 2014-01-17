@@ -7,8 +7,9 @@ block content
                 a(href='#jardin')=('El Jardín químico')
             li
                 a(href='#obras')=('Pequeñas Obras')
-    article
-        div(id='album')
+
+    article(id='jardin')
+        div(class='album')
             img(src='../images/cdcover-jardin.png')
             div(class='info')
 
@@ -39,7 +40,7 @@ block content
                     span
                         | Ezequiel Morfi - en el estudio de Andres Mayo
 
-                p
+                p(style='white-space:pre;')
                     strong Arte y diseño del disco:
                     br
                     span
@@ -47,13 +48,13 @@ block content
 
         div(id='bc-player')
             <iframe width="300" height="355" style="position: relative; display: block; width: 300px; height: 355px;" src="http://bandcamp.com/EmbeddedPlayer/v=2/album=3507458774/size=grande2/linkcol=4285BB/" allowtransparency="true" frameborder="0"><a href="http://vidrio.bandcamp.com/album/el-jard-n-qu-mico">El jardín químico by VIDRIO</a></iframe>
-<<<<<<< HEAD
+
             a(href='http://articulo.mercadolibre.com.ar/MLA-459572417-el-jardin-quimico-vidrio-_JM', class='buy-something', target='_blank')
                 | Comprá el disco
 
-    article
-        div(id='obras')
-            img(src='../images/cdcover-jardin.png')
+    article(id='obras')
+        div(class='album')
+            img(src='../images/cdcover-obras.jpg')
             div(class='info')
 
                 p
@@ -71,9 +72,3 @@ block content
 
         div(id='bc-player')
             iframe(width='100%', height='450', scrolling='no', frameborder='no', src='https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/4060247')
-            a(href='http://articulo.mercadolibre.com.ar/MLA-459572417-el-jardin-quimico-vidrio-_JM', class='buy-something', target='_blank')
-                | Comprá el disco
-=======
-            a(href='http://articulo.mercadolibre.com.ar/MLA-473423714-el-jardin-quimico-vidrio-_JM', class='buy-something', target='_blank')
-                | Comprá el disco
->>>>>>> 580973575ef4c56924156f95761e90199e7dbddf

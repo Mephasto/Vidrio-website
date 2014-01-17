@@ -115,24 +115,24 @@ header audio {
     border: 1px solid rgba(255,255,255,0.3);
 }
 
-#album {
+.album {
     width: 360px;
     margin-right: 20px;
     float: left;
     color: #fcfcf9;
 }
-#album .info {
+.album .info {
     margin-top: 20px;
     font-size: 12px;
     font-family: 'Open Sans', sans-serif;
 }
-#album .info em {
+.album .info em {
     position: relative;
     top: -10px;
     right: 3px;
     float: right;
 }
-#album .info p span {
+.album .info p span {
     display: block;
     margin-left: 10px;
 }
