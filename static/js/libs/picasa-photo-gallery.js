@@ -14,6 +14,7 @@ $(document).ready(function(){
             $.each(item.media$group.media$thumbnail, function(i,item){
                 var album_thumb_URL = item.url;
                 $('#photoalbums').append('<li>' + album_Title + '</li>');
+                console.log("Album Title: " + album_Title);
             });
             //Album Title
             //$('#images').append("Album Title: " + album_Title + '<br />');
@@ -25,7 +26,7 @@ $(document).ready(function(){
                 //Get Numerical ID from URL
             album_ID = album_ID.split('/')[9].split('?')[0];
             //$('#images').append("AlbumID: " + album_ID + '<br /><br />');
- 
+            console.log("Album ID: " + album_ID);
             var json_Photo_URI = "https://picasaweb.google.com/data/feed/base/"
                 + "user/"       +   "vidriorock"
                 + "/albumid/"   +   album_ID
