@@ -4,16 +4,16 @@ var Schema = mongoose.Schema
   , ObjectId = Schema.ObjectId;
 
 var showSchema = new Schema({
-    title    : String
-  , place    : String
-  , when	 : String
-  , date     : String
-  , time	 : String
-  , body     : String
+    title	: String
+  , place	: String
+  , when	: String
+  , date	: Date
+  , time	: String
+  , body	: String
 });
 
 var emailSchema = new Schema({
-	email 	: String
+    email 	: String
 });
 
 exports.Email = mongoose.model('Email', emailSchema);

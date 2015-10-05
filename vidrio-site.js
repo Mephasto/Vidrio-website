@@ -13,7 +13,8 @@ server.use(express.static(__dirname + '/static'));
 server.listen(port);
 
 //DB connection
-mongoose.connect('mongodb://mephasto:Floryudoka1@ds045027.mongolab.com:45027/vidrio-website');
+mongoose.connect('mongodb://vidrio-admin:q1w2e3r4@ds035533.mongolab.com:35533/vidrio-website-a');
+//mongoose.connect('mongodb://mephasto:Floryudoka1@ds045027.mongolab.com:45027/vidrio-website');
 var models = require('./models');
 
 server.locals = { 
@@ -74,7 +75,7 @@ server.get('/shows/list', function(req,res){
 // SHOWS
 server.get('/shows', function(req,res){
   var query = models.Show.find();
-  query.sort('date').execFind(function (err, shows) {
+  query.sort({date:'desc'}).exec(function (err, shows) {
     if(err === null){
       res.render('shows.jade', { 
                   title : 'VIDRIO - Shows',
